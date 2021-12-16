@@ -1,0 +1,16 @@
+PODS:
+  - TestSDKStaticLib (0.1.0)
+
+DEPENDENCIES:
+  - TestSDKStaticLib (from `../`)
+
+EXTERNAL SOURCES:
+  TestSDKStaticLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TestSDKStaticLib: 0a81b5f331c201cbc7852913a5525115e1b06f97
+
+PODFILE CHECKSUM: 43303f2735e08ba9cc79b978aeeef99c75139e32
+
+COCOAPODS: 1.11.2

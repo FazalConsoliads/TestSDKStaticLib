@@ -32,6 +32,28 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'TestSDKStaticLib/Classes/**/*'
   
+  s.requires_arc = true
+  
+  s.pod_target_xcconfig = {
+    'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64',
+    'VALID_ARCHS[sdk=iphoneos*]' => 'arm64 armv7',
+  }
+  
+  s.user_target_xcconfig = {
+    'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64',
+    'VALID_ARCHS[sdk=iphoneos*]' => 'arm64 armv7',
+  }
+  
+  s.ios.vendored_library = 'TestSDKStaticLib/libConsoliAd.a'
+
+  s.xcconfig = {
+    'LIBRARY_SEARCH_PATHS' => '"$(PODS_ROOT)/TestSDKStaticLib"'
+  }
+  
+  s.resource_bundles = {
+     'TestSDKStaticLib' => ['TestSDKStaticLib/Assets/*.{xib,png}']
+  }
+  
   # s.resource_bundles = {
   #   'TestSDKStaticLib' => ['TestSDKStaticLib/Assets/*.png']
   # }

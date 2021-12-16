@@ -1,0 +1,1 @@
+../../../../../TestSDKStaticLib/Classes/ImmersiveAdDelegate.h

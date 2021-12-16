@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoAdPlaybackViewController">
+            <connections>
+                <outlet property="closeButton" destination="9IX-gp-0UO" id="Ldq-Sm-SPj"/>
+                <outlet property="mPlaybackView" destination="3" id="6"/>
+                <outlet property="postRewardedView" destination="OAb-yn-G00" id="qvd-K1-1hz"/>
+                <outlet property="preRewardedView" destination="fNK-9q-tNR" id="cxn-bF-leE"/>
+                <outlet property="privacyPolicyView" destination="bCe-h0-3jk" id="vxX-VF-STi"/>
+                <outlet property="progressParentView" destination="DAj-2j-Our" id="w9I-b2-f7p"/>
+                <outlet property="progressTimmerView" destination="WSs-4M-e7k" id="lFZ-e8-m0a"/>
+                <outlet property="progressView" destination="0Dh-24-XtK" id="OCq-5i-nFj"/>
+                <outlet property="reloadVideoButton" destination="Uiy-m0-teY" id="lYz-yb-276"/>
+                <outlet property="skipButton" destination="4KN-0c-XfG" id="B7p-Qs-Dld"/>
+                <outlet property="videoInterstitialView" destination="y90-tM-r0r" id="UEO-Eh-txo"/>
+                <outlet property="view" destination="1" id="5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="1" userLabel="VideoPlayerController">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y90-tM-r0r" customClass="VideoInterstitialView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                    <subviews>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3du-id-Crs">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                            <color key="backgroundColor" red="0.84705882349999995" green="0.59999999999999998" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </imageView>
+                        <imageView tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="85e-vr-COA">
+                            <rect key="frame" x="160" y="230" width="0.0" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="height" priority="250" id="VE6-5N-zff"/>
+                                <constraint firstAttribute="width" priority="250" id="cJ1-zA-dii"/>
+                            </constraints>
+                        </imageView>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8mo-1O-uUS">
+                            <rect key="frame" x="141.5" y="211.5" width="37" height="37"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="85e-vr-COA" firstAttribute="centerX" secondItem="3du-id-Crs" secondAttribute="centerX" id="5mC-tP-vr8"/>
+                        <constraint firstItem="85e-vr-COA" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="3du-id-Crs" secondAttribute="trailing" constant="-1" id="8d3-2b-VCr"/>
+                        <constraint firstItem="85e-vr-COA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3du-id-Crs" secondAttribute="leading" constant="1" id="B3a-GB-8Fb"/>
+                        <constraint firstItem="85e-vr-COA" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="3du-id-Crs" secondAttribute="bottom" constant="-1" id="Gl9-OO-Zb3"/>
+                        <constraint firstItem="3du-id-Crs" firstAttribute="top" secondItem="y90-tM-r0r" secondAttribute="top" id="avB-L9-IJ4"/>
+                        <constraint firstItem="3du-id-Crs" firstAttribute="leading" secondItem="y90-tM-r0r" secondAttribute="leading" id="ecC-Kj-4bj"/>
+                        <constraint firstItem="85e-vr-COA" firstAttribute="centerY" secondItem="3du-id-Crs" secondAttribute="centerY" id="esS-zN-ay7"/>
+                        <constraint firstItem="8mo-1O-uUS" firstAttribute="centerX" secondItem="y90-tM-r0r" secondAttribute="centerX" id="eyl-DL-Ea6"/>
+                        <constraint firstAttribute="bottom" secondItem="3du-id-Crs" secondAttribute="bottom" id="lN0-ND-9VY"/>
+                        <constraint firstItem="85e-vr-COA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3du-id-Crs" secondAttribute="top" constant="1" id="uGQ-OG-KZH"/>
+                        <constraint firstAttribute="trailing" secondItem="3du-id-Crs" secondAttribute="trailing" id="uly-Qh-R2W"/>
+                        <constraint firstItem="8mo-1O-uUS" firstAttribute="centerY" secondItem="y90-tM-r0r" secondAttribute="centerY" id="xdS-R6-uVH"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="activityView" destination="8mo-1O-uUS" id="Rxj-yy-ECn"/>
+                        <outlet property="adImageView" destination="85e-vr-COA" id="0jh-TC-YRl"/>
+                        <outlet property="frameImageView" destination="3du-id-Crs" id="Oie-EL-DRq"/>
+                    </connections>
+                </view>
+                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3" customClass="VideoPlaybackView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uiy-m0-teY" userLabel="Reload Video">
+                    <rect key="frame" x="260" y="30" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="LiK-yf-V2j"/>
+                        <constraint firstAttribute="width" constant="40" id="eug-io-Td9"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="replay_button.png"/>
+                    <connections>
+                        <action selector="reloadVideoButtonPressed:" destination="-1" eventType="touchUpInside" id="9tL-bh-XZ3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IX-gp-0UO">
+                    <rect key="frame" x="20" y="30" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="EP4-2e-5fw"/>
+                        <constraint firstAttribute="height" constant="40" id="YIX-sU-G5L"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="cross_button.png"/>
+                    <connections>
+                        <action selector="crossButtonPressed:" destination="-1" eventType="touchUpInside" id="tTx-jr-0RI"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAj-2j-Our">
+                    <rect key="frame" x="10" y="448" width="273" height="2"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Dh-24-XtK">
+                            <rect key="frame" x="0.0" y="0.0" width="10" height="2"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <color key="backgroundColor" red="0.97963529825210571" green="0.65571111440658569" blue="0.19288286566734314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="cNT-4H-dIk"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSs-4M-e7k" userLabel="Circular Progress View 4" customClass="UAProgressView">
+                    <rect key="frame" x="293" y="433" width="25" height="25"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="LcV-jf-Q17"/>
+                        <constraint firstAttribute="width" constant="25" id="v4G-O3-vg5"/>
+                    </constraints>
+                </view>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4KN-0c-XfG">
+                    <rect key="frame" x="278" y="408" width="40" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="QSQ-Zu-HPT"/>
+                        <constraint firstAttribute="height" constant="15" id="Rch-Nv-1Zp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                    <state key="normal" backgroundImage="skip_button.png">
+                        <color key="titleColor" red="0.97963529829999996" green="0.65571111439999996" blue="0.19288286569999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="skipVideoButtonTapped:" destination="-1" eventType="touchUpInside" id="8V6-lK-Ohi"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bCe-h0-3jk" customClass="CAPrivacyPolicyView">
+                    <rect key="frame" x="0.0" y="418" width="105" height="20"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ad by" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69d-lt-e7a">
+                            <rect key="frame" x="2" y="5" width="23.5" height="10"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="8"/>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                            <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="consoli_fresh.png" translatesAutoresizingMaskIntoConstraints="NO" id="U0I-RF-HqX">
+                            <rect key="frame" x="25.5" y="1" width="77" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="cd5-Rb-Tcw"/>
+                                <constraint firstAttribute="width" constant="77" id="chd-SK-2BR"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="U0I-RF-HqX" firstAttribute="leading" secondItem="69d-lt-e7a" secondAttribute="trailing" id="6sg-K1-1lR"/>
+                        <constraint firstItem="U0I-RF-HqX" firstAttribute="centerY" secondItem="69d-lt-e7a" secondAttribute="centerY" id="Dcb-z9-19w"/>
+                        <constraint firstAttribute="width" constant="105" id="PMQ-s9-djJ"/>
+                        <constraint firstItem="69d-lt-e7a" firstAttribute="centerY" secondItem="bCe-h0-3jk" secondAttribute="centerY" id="YRQ-Wm-TIb"/>
+                        <constraint firstAttribute="height" constant="20" id="hHI-wx-rEE"/>
+                        <constraint firstItem="69d-lt-e7a" firstAttribute="leading" secondItem="bCe-h0-3jk" secondAttribute="leading" constant="2" id="ohc-vu-hsX"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="ppLabel" destination="69d-lt-e7a" id="1gr-59-Lgd"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3" firstAttribute="leading" secondItem="W5s-03-QRa" secondAttribute="leading" id="0mm-K1-MXq"/>
+                <constraint firstItem="y90-tM-r0r" firstAttribute="top" secondItem="1" secondAttribute="top" id="5GO-pn-bul"/>
+                <constraint firstItem="DAj-2j-Our" firstAttribute="top" secondItem="bCe-h0-3jk" secondAttribute="bottom" constant="10" id="7Bi-bg-Q1Q"/>
+                <constraint firstItem="DAj-2j-Our" firstAttribute="leading" secondItem="W5s-03-QRa" secondAttribute="leading" constant="10" id="DEA-c1-IAA"/>
+                <constraint firstItem="W5s-03-QRa" firstAttribute="bottom" secondItem="y90-tM-r0r" secondAttribute="bottom" id="HRk-1s-Aul"/>
+                <constraint firstItem="Uiy-m0-teY" firstAttribute="top" secondItem="W5s-03-QRa" secondAttribute="top" constant="30" id="IY0-Qo-0mS"/>
+                <constraint firstItem="W5s-03-QRa" firstAttribute="trailing" secondItem="WSs-4M-e7k" secondAttribute="trailing" constant="2" id="IkR-r4-SQb"/>
+                <constraint firstItem="WSs-4M-e7k" firstAttribute="leading" secondItem="DAj-2j-Our" secondAttribute="trailing" constant="10" id="Iqd-EJ-5MK"/>
+                <constraint firstItem="9IX-gp-0UO" firstAttribute="leading" secondItem="W5s-03-QRa" secondAttribute="leading" constant="20" id="KL0-hG-Vno"/>
+                <constraint firstItem="4KN-0c-XfG" firstAttribute="trailing" secondItem="WSs-4M-e7k" secondAttribute="trailing" id="Td3-zK-gIW"/>
+                <constraint firstItem="W5s-03-QRa" firstAttribute="trailing" secondItem="Uiy-m0-teY" secondAttribute="trailing" constant="20" id="Thf-VG-M3o"/>
+                <constraint firstItem="9IX-gp-0UO" firstAttribute="top" secondItem="W5s-03-QRa" secondAttribute="top" constant="30" id="ZKb-FD-ZD0"/>
+                <constraint firstItem="y90-tM-r0r" firstAttribute="leading" secondItem="W5s-03-QRa" secondAttribute="leading" id="a6H-k4-qs9"/>
+                <constraint firstItem="W5s-03-QRa" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" id="eAF-3L-51C"/>
+                <constraint firstItem="W5s-03-QRa" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" id="emn-md-i4D"/>
+                <constraint firstItem="WSs-4M-e7k" firstAttribute="top" secondItem="4KN-0c-XfG" secondAttribute="bottom" constant="10" id="f0x-Sc-HQQ"/>
+                <constraint firstItem="W5s-03-QRa" firstAttribute="bottom" secondItem="WSs-4M-e7k" secondAttribute="bottom" constant="2" id="gTP-jk-7xN"/>
+                <constraint firstItem="3" firstAttribute="top" secondItem="1" secondAttribute="top" id="nVh-kQ-oad"/>
+                <constraint firstItem="W5s-03-QRa" firstAttribute="trailing" secondItem="y90-tM-r0r" secondAttribute="trailing" id="slM-J7-axK"/>
+                <constraint firstItem="bCe-h0-3jk" firstAttribute="leading" secondItem="W5s-03-QRa" secondAttribute="leading" id="wxj-A6-OPp"/>
+                <constraint firstItem="W5s-03-QRa" firstAttribute="bottom" secondItem="DAj-2j-Our" secondAttribute="bottom" constant="10" id="yeP-EZ-3tK"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="W5s-03-QRa"/>
+            <point key="canvasLocation" x="57.600000000000001" y="55.772113943028494"/>
+        </view>
+        <view contentMode="scaleToFill" id="fNK-9q-tNR" userLabel="PreMessageView" customClass="PreRewardedView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emj-n5-vOx">
+                    <rect key="frame" x="20" y="30" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="jY3-sq-tLB"/>
+                        <constraint firstAttribute="width" constant="40" id="sw6-iK-LKG"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="cross_button.png"/>
+                    <connections>
+                        <action selector="preRewardedCloseButtonPressed:" destination="fNK-9q-tNR" eventType="touchUpInside" id="Loe-K2-9MX"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coins_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="l6a-ZX-SG7">
+                    <rect key="frame" x="147.5" y="243.5" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Pej-yS-Ecd"/>
+                        <constraint firstAttribute="height" constant="80" id="Qel-Ra-Shu"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watch For 1 Coins" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meu-P1-n8j">
+                    <rect key="frame" x="104.5" y="363.5" width="166" height="24"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tr-PR-zR8">
+                    <rect key="frame" x="136" y="427.5" width="103" height="34"/>
+                    <color key="backgroundColor" red="0.53289014099999998" green="0.79569774869999998" blue="0.24077132339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title=" Earn Coints "/>
+                    <connections>
+                        <action selector="watchVideoButtonPressed:" destination="fNK-9q-tNR" eventType="touchUpInside" id="p0H-wF-LTV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="emj-n5-vOx" firstAttribute="leading" secondItem="MoL-Nu-Ulm" secondAttribute="leading" constant="20" id="5no-1r-14w"/>
+                <constraint firstItem="2tr-PR-zR8" firstAttribute="top" secondItem="meu-P1-n8j" secondAttribute="bottom" constant="40" id="N7y-J8-vD5"/>
+                <constraint firstItem="l6a-ZX-SG7" firstAttribute="centerY" secondItem="fNK-9q-tNR" secondAttribute="centerY" constant="-50" id="RYz-vp-F6U"/>
+                <constraint firstItem="l6a-ZX-SG7" firstAttribute="centerX" secondItem="fNK-9q-tNR" secondAttribute="centerX" id="XuQ-hU-JBM"/>
+                <constraint firstItem="meu-P1-n8j" firstAttribute="top" secondItem="l6a-ZX-SG7" secondAttribute="bottom" constant="40" id="glD-o0-SsD"/>
+                <constraint firstItem="meu-P1-n8j" firstAttribute="centerX" secondItem="l6a-ZX-SG7" secondAttribute="centerX" id="hXb-RG-Rso"/>
+                <constraint firstItem="2tr-PR-zR8" firstAttribute="centerX" secondItem="meu-P1-n8j" secondAttribute="centerX" id="kBW-wx-67g"/>
+                <constraint firstItem="emj-n5-vOx" firstAttribute="top" secondItem="MoL-Nu-Ulm" secondAttribute="top" constant="30" id="pYL-C0-eBk"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <viewLayoutGuide key="safeArea" id="MoL-Nu-Ulm"/>
+            <connections>
+                <outlet property="messageLabel" destination="meu-P1-n8j" id="Gqe-gk-vkF"/>
+                <outlet property="watchVideoButton" destination="2tr-PR-zR8" id="mza-YZ-cto"/>
+            </connections>
+            <point key="canvasLocation" x="-188" y="900"/>
+        </view>
+        <view alpha="0.80000000000000004" contentMode="scaleToFill" id="OAb-yn-G00" userLabel="PostMessageView" customClass="PostRewardedView">
+            <rect key="frame" x="0.0" y="0.0" width="361" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulation! You have Earnd X Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Djd-Cr-eUp">
+                    <rect key="frame" x="56.5" y="16.5" width="248" height="27"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="23"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coins_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="46a-1V-6R1">
+                    <rect key="frame" x="326" y="15" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="x3A-ad-zMd"/>
+                        <constraint firstAttribute="height" constant="30" id="x8f-6m-CKt"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+            <constraints>
+                <constraint firstItem="46a-1V-6R1" firstAttribute="leading" secondItem="Djd-Cr-eUp" secondAttribute="trailing" constant="21.5" id="CAW-5Y-Gxg"/>
+                <constraint firstItem="Djd-Cr-eUp" firstAttribute="centerY" secondItem="OAb-yn-G00" secondAttribute="centerY" id="HWz-O7-0Li"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="46a-1V-6R1" secondAttribute="trailing" constant="5" id="HZB-2o-ffS"/>
+                <constraint firstItem="46a-1V-6R1" firstAttribute="centerY" secondItem="Djd-Cr-eUp" secondAttribute="centerY" id="dZQ-Ud-1mT"/>
+                <constraint firstItem="Djd-Cr-eUp" firstAttribute="centerX" secondItem="OAb-yn-G00" secondAttribute="centerX" id="zya-Q0-oRY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="qOy-LM-MnV"/>
+            <connections>
+                <outlet property="messageLabel" destination="Djd-Cr-eUp" id="Dj2-gZ-ihu"/>
+            </connections>
+            <point key="canvasLocation" x="616.79999999999995" y="719.64017991004505"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="coins_image.png" width="80" height="80"/>
+        <image name="consoli_fresh.png" width="154" height="36"/>
+        <image name="cross_button.png" width="121" height="121"/>
+        <image name="replay_button.png" width="121" height="121"/>
+        <image name="skip_button.png" width="21.840000152587891" height="9.119999885559082"/>
+    </resources>
+</document>
